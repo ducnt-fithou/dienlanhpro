@@ -31,7 +31,6 @@
         td { padding: 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
         .price-tag { font-weight: 700; color: #2563eb; white-space: nowrap; }
 
-        /* Zalo Floating Button */
         .zalo-float {
             position: fixed;
             bottom: 24px;
@@ -45,10 +44,9 @@
             100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
         }
 
-        /* Phone Floating Button (NEW) */
         .phone-float {
             position: fixed;
-            bottom: 96px; /* Nằm trên nút Zalo (24 + 56 + 16px gap) */
+            bottom: 96px;
             right: 24px;
             z-index: 99;
             animation: pulse-green 2s infinite;
@@ -59,7 +57,6 @@
             100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
-        /* Reveal on Scroll Animation */
         .reveal {
             position: relative;
             opacity: 0;
@@ -130,7 +127,6 @@
             </div>
             <div class="lg:w-1/2 relative">
                 <div class="bg-blue-400/20 rounded-3xl p-4 backdrop-blur-sm border border-white/20 shadow-2xl relative overflow-hidden min-h-[400px] flex items-center justify-center">
-                    <!-- Ảnh tĩnh chất lượng cao (Static Image) -->
                     <img src="https://raw.githubusercontent.com/ducnt-fithou/dienlanhpro/d87a30e441a93b4b3ff791abb3452d00abb521a9/img/banner.jpeg" 
                          alt="Kỹ thuật viên Điện Lạnh Pro chuyên nghiệp đang sửa điều hòa" 
                          class="rounded-2xl w-full object-cover h-[400px] shadow-2xl transition-opacity duration-700">
@@ -141,21 +137,21 @@
 
     <!-- Trust Stats Section -->
     <section class="py-12 bg-white">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 text-center">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                <div class="stat-card p-6 rounded-2xl bg-blue-50/50">
                     <div class="text-4xl font-extrabold text-blue-600 mb-2">5,000+</div>
                     <div class="text-slate-600 font-medium text-sm">Khách Hàng Hài Lòng</div>
                 </div>
-                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                <div class="stat-card p-6 rounded-2xl bg-blue-50/50">
                     <div class="text-4xl font-extrabold text-blue-600 mb-2">10+</div>
                     <div class="text-slate-600 font-medium text-sm">Năm Kinh Nghiệm</div>
                 </div>
-                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                <div class="stat-card p-6 rounded-2xl bg-blue-50/50">
                     <div class="text-4xl font-extrabold text-blue-600 mb-2">20+</div>
                     <div class="text-slate-600 font-medium text-sm">Kỹ Thuật Viên Giỏi</div>
                 </div>
-                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                <div class="stat-card p-6 rounded-2xl bg-blue-50/50">
                     <div class="text-4xl font-extrabold text-blue-600 mb-2">24/7</div>
                     <div class="text-slate-600 font-medium text-sm">Hỗ Trợ Tận Nơi</div>
                 </div>
@@ -165,75 +161,66 @@
 
     <!-- Dịch Vụ -->
     <section id="services-list" class="py-24 bg-white reveal">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">Dịch Vụ Của Chúng Tôi</h2>
-                <p class="text-slate-500 max-w-xl mx-auto">Chúng tôi cung cấp giải pháp toàn diện cho hệ thống làm mát của bạn với chất lượng cao nhất.</p>
-                <div class="w-20 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+        <div class="container mx-auto px-4 text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Dịch Vụ Của Chúng Tôi</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+        </div>
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300 text-left">
+                <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                    <i data-lucide="droplets" class="w-8 h-8"></i>
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Vệ Sinh Điều Hòa</h3>
+                <p class="text-slate-600 leading-relaxed mb-4 text-sm">Làm sạch sâu dàn lạnh, dàn nóng. Giúp máy chạy êm, tiết kiệm điện năng và bảo vệ sức khỏe.</p>
+                <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all text-sm">Đặt lịch ngay <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
             </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300">
-                    <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
-                        <i data-lucide="droplets" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Vệ Sinh Điều Hòa</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">Làm sạch sâu dàn lạnh, dàn nóng. Giúp máy chạy êm, tiết kiệm 30% điện năng và bảo vệ sức khỏe.</p>
-                    <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Đặt lịch ngay <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+            <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300 text-left">
+                <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                    <i data-lucide="wrench" class="w-8 h-8"></i>
                 </div>
-
-                <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300">
-                    <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
-                        <i data-lucide="wrench" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Sửa Chữa Chuyên Sâu</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">Xử lý triệt để lỗi mất lạnh, rò rỉ nước, hỏng bo mạch, thay máy nén (Block) chính hãng.</p>
-                    <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Báo giá sửa <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Sửa Chữa Chuyên Sâu</h3>
+                <p class="text-slate-600 leading-relaxed mb-4 text-sm">Xử lý triệt để lỗi mất lạnh, rò rỉ nước, hỏng bo mạch, thay máy nén (Block) chính hãng.</p>
+                <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all text-sm">Báo giá sửa <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+            </div>
+            <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300 text-left">
+                <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                    <i data-lucide="layout" class="w-8 h-8"></i>
                 </div>
-
-                <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300">
-                    <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
-                        <i data-lucide="layout" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-4">Lắp Đặt & Di Dời</h3>
-                    <p class="text-slate-600 leading-relaxed mb-4">Tư vấn vị trí lắp đặt tối ưu, tháo lắp điều hòa treo tường, âm trần, nối ống gió chuẩn kỹ thuật.</p>
-                    <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Tư vấn lắp <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
-                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-4">Lắp Đặt & Di Dời</h3>
+                <p class="text-slate-600 leading-relaxed mb-4 text-sm">Tư vấn vị trí lắp đặt tối ưu, tháo lắp điều hòa treo tường, âm trần chuẩn kỹ thuật.</p>
+                <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all text-sm">Tư vấn lắp <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Hãng Điều Hòa Đối Tác (10 hãng) -->
-    <section class="py-20 bg-slate-50 border-y border-slate-100 overflow-hidden reveal">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12">
-                <p class="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-2">Đối tác tin cậy & Ủy quyền sửa chữa</p>
-                <div class="w-12 h-0.5 bg-blue-600 mx-auto rounded-full"></div>
-            </div>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-                <span class="text-xl md:text-2xl font-black text-slate-700 tracking-tighter">DAIKIN</span>
-                <span class="text-xl md:text-2xl font-bold text-slate-700">Panasonic</span>
-                <span class="text-xl md:text-2xl font-bold text-slate-700 italic">MITSUBISHI</span>
-                <span class="text-xl md:text-2xl font-black text-slate-700">SAMSUNG</span>
-                <span class="text-xl md:text-2xl font-black text-slate-700">LG</span>
-                <span class="text-xl md:text-2xl font-bold text-slate-700 tracking-widest">TOSHIBA</span>
-                <span class="text-xl md:text-2xl font-black text-slate-700">SHARP</span>
-                <span class="text-xl md:text-2xl font-black text-slate-700">CASPER</span>
-                <span class="text-xl md:text-2xl font-black text-slate-700 tracking-tighter italic">NAGAKAWA</span>
-                <span class="text-xl md:text-2xl font-black text-slate-700">GREE</span>
-            </div>
+    <!-- Hãng Đối Tác (10 hãng) -->
+    <section class="py-20 bg-slate-50 border-y border-slate-100 reveal">
+        <div class="container mx-auto px-4 text-center mb-12">
+            <p class="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-2">Đối tác tin cậy & Ủy quyền sửa chữa</p>
+            <div class="w-12 h-0.5 bg-blue-600 mx-auto rounded-full"></div>
+        </div>
+        <div class="container mx-auto px-4 flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+            <span class="text-xl md:text-2xl font-black text-slate-700 tracking-tighter">DAIKIN</span>
+            <span class="text-xl md:text-2xl font-bold text-slate-700">Panasonic</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700 tracking-tighter italic">NAGAKAWA</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700">SAMSUNG</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700">LG</span>
+            <span class="text-xl md:text-2xl font-bold text-slate-700 tracking-widest">TOSHIBA</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700">SHARP</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700">CASPER</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700 italic">MIDEA</span>
+            <span class="text-xl md:text-2xl font-black text-slate-700">GREE</span>
         </div>
     </section>
 
     <!-- Pricing Section -->
-    <section id="pricing" class="py-24 bg-white relative reveal">
+    <section id="pricing" class="py-24 bg-white reveal">
         <div class="container mx-auto px-4 text-center mb-16">
             <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Bảng Giá Dịch Vụ 2026</h2>
-            <p class="text-slate-600 max-w-2xl mx-auto italic">Cam kết linh kiện chính hãng, báo giá trước khi thi công.</p>
+            <p class="text-slate-600 max-w-2xl mx-auto italic text-sm">Cam kết linh kiện chính hãng, báo giá trước khi thi công.</p>
             <div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
-
-        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8 max-w-6xl">
             <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
                 <div class="p-6 bg-blue-50 border-b border-slate-200 flex items-center gap-3">
                     <i data-lucide="shield-check" class="text-blue-600 w-6 h-6"></i>
@@ -242,7 +229,7 @@
                 <div class="table-container">
                     <table>
                         <thead><tr><th class="text-left">Hạng mục</th><th class="text-center">ĐVT</th><th class="text-right">Đơn giá</th></tr></thead>
-                        <tbody>
+                        <tbody class="text-sm">
                             <tr><td>Vệ sinh máy treo tường</td><td class="text-center">Bộ</td><td class="text-right price-tag">150.000</td></tr>
                             <tr><td>Vệ sinh máy âm trần</td><td class="text-center">Bộ</td><td class="text-right price-tag">220.000</td></tr>
                             <tr><td>Nạp gas R22</td><td class="text-center">PSI</td><td class="text-right price-tag">7.000</td></tr>
@@ -251,7 +238,6 @@
                     </table>
                 </div>
             </div>
-
             <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden text-left">
                 <div class="p-6 bg-blue-50 border-b border-slate-200 flex items-center gap-3">
                     <i data-lucide="wrench" class="text-blue-600 w-6 h-6"></i>
@@ -260,7 +246,7 @@
                 <div class="table-container">
                     <table>
                         <thead><tr><th class="text-left">Hạng mục</th><th class="text-center">ĐVT</th><th class="text-right">Đơn giá</th></tr></thead>
-                        <tbody>
+                        <tbody class="text-sm">
                             <tr><td>Lắp máy 9.000 - 12.000BTU</td><td class="text-center">Bộ</td><td class="text-right price-tag">250.000</td></tr>
                             <tr><td>Lắp máy 18.000BTU</td><td class="text-center">Bộ</td><td class="text-right price-tag">300.000</td></tr>
                             <tr><td>Ống đồng Ruby (9.000BTU)</td><td class="text-center">Mét</td><td class="text-right price-tag">200.000</td></tr>
@@ -270,11 +256,9 @@
                 </div>
             </div>
         </div>
-
         <div class="container mx-auto px-4 text-center mt-12">
-            <a href="https://drive.google.com/file/d/1_FvzAwdWsqJZJAStO4Nx5UiEPZ8j0glU" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-xl hover:shadow-blue-200">
-                <i data-lucide="file-text" class="w-5 h-5"></i>
-                Báo Giá Chi Tiết
+            <a href="https://docs.google.com/presentation/d/1bMNV1lssyQHd0RtJeU07SA_Y8K1UbN-fzyyiIFb8UeM/edit?usp=sharing" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-xl hover:shadow-blue-200">
+                <i data-lucide="file-text" class="w-5 h-5"></i> Báo Giá Chi Tiết
             </a>
         </div>
     </section>
@@ -286,26 +270,20 @@
         </div>
         <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
             <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
-                <div class="flex gap-1 text-yellow-400 mb-4">
-                    <i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i>
-                </div>
-                <p class="text-slate-300 italic mb-6">"Dịch vụ rất nhanh chóng, tôi gọi sau 30 phút là thợ đã có mặt. Anh kỹ thuật viên nhiệt tình."</p>
+                <div class="flex gap-1 text-yellow-400 mb-4"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                <p class="text-slate-300 italic mb-6 text-sm">"Dịch vụ rất nhanh chóng, tôi gọi sau 30 phút là thợ đã có mặt. Anh kỹ thuật viên nhiệt tình."</p>
                 <p class="font-bold">Anh Nguyễn Hoàng Anh</p>
                 <p class="text-xs text-slate-400">Quận Đống Đa, Hà Nội</p>
             </div>
             <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
-                <div class="flex gap-1 text-yellow-400 mb-4">
-                    <i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i>
-                </div>
-                <p class="text-slate-300 italic mb-6">"Bảng giá minh bạch, thợ đến lắp máy rất thẩm mỹ và sạch sẽ. Sẽ tiếp tục ủng hộ."</p>
+                <div class="flex gap-1 text-yellow-400 mb-4"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                <p class="text-slate-300 italic mb-6 text-sm">"Bảng giá minh bạch, thợ đến lắp máy rất thẩm mỹ và sạch sẽ. Sẽ tiếp tục ủng hộ."</p>
                 <p class="font-bold">Chị Lê Minh Lan</p>
                 <p class="text-xs text-slate-400">Hà Nội</p>
             </div>
             <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
-                <div class="flex gap-1 text-yellow-400 mb-4">
-                    <i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i>
-                </div>
-                <p class="text-slate-300 italic mb-6">"Trợ lý AI bắt bệnh rất hay, thợ đến đúng như AI tư vấn. Chuyên nghiệp!"</p>
+                <div class="flex gap-1 text-yellow-400 mb-4"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+                <p class="text-slate-300 italic mb-6 text-sm">"Dịch vụ chuyên nghiệp, thợ sửa rất có tâm. Giá cả phải chăng, đúng như báo giá trên web."</p>
                 <p class="font-bold">Anh Trần Việt Hùng</p>
                 <p class="text-xs text-slate-400">Đà Nẵng</p>
             </div>
@@ -316,47 +294,40 @@
     <section id="contact" class="py-20 bg-slate-50 reveal">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
-                <div class="lg:w-1/3 bg-blue-600 text-white p-10 lg:p-16 relative">
-                    <h3 class="text-3xl font-bold mb-8">Liên Hệ Ngay</h3>
-                    <div class="space-y-6 text-blue-50">
-                        <a href="tel:0924101087" class="flex gap-4 items-center hover:text-blue-200 transition-colors group">
-                            <i data-lucide="phone" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
-                            <p class="font-semibold text-lg text-white">0924 101 087</p>
+                <div class="lg:w-1/3 bg-blue-600 text-white p-10 lg:p-16 relative text-left">
+                    <h3 class="text-3xl font-bold mb-8 tracking-tight">Liên Hệ Ngay</h3>
+                    <div class="space-y-6">
+                        <a href="tel:0924101087" class="flex gap-4 items-center hover:text-blue-200 transition group">
+                            <i data-lucide="phone" class="w-5 h-5 group-hover:scale-110"></i>
+                            <p class="font-semibold text-lg">0924 101 087</p>
                         </a>
-                        <div class="flex gap-4 items-start group">
+                        <div class="flex gap-4 items-start">
                             <i data-lucide="map-pin" class="w-5 h-5 mt-1 shrink-0"></i>
-                            <p class="text-blue-50 leading-relaxed">Vĩnh Hưng, Hoàng Mai, Hà Nội</p>
+                            <p class="text-blue-50 text-sm">Vĩnh Hưng, Hoàng Mai, Hà Nội</p>
                         </div>
                         <div class="flex gap-4 items-center">
                             <i data-lucide="mail" class="w-5 h-5"></i>
-                            <p>hotro@dienlanhpro.vn</p>
+                            <p class="text-sm">hotro@dienlanhpro.vn</p>
                         </div>
                     </div>
                 </div>
-
                 <div class="lg:w-2/3 p-10 lg:p-16">
-                    <h4 class="text-2xl font-bold mb-6 text-slate-800 tracking-tight">Đặt Lịch & Nhận Tư Vấn Miễn Phí</h4>
+                    <h4 class="text-2xl font-bold mb-6 text-slate-800 tracking-tight">Đặt Lịch & Nhận Tư Vấn</h4>
                     <form class="space-y-6" id="booking-form">
-                        <div class="grid md:grid-cols-2 gap-6">
+                        <div class="grid md:grid-cols-2 gap-6 text-left">
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Họ tên của bạn</label>
-                                <input type="text" id="customerName" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50">
+                                <input type="text" id="customerName" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50 text-sm">
                             </div>
                             <div>
                                 <label class="block text-sm font-semibold text-slate-700 mb-2">Số điện thoại</label>
-                                <input type="tel" id="customerPhone" required placeholder="09xx xxx xxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50">
+                                <input type="tel" id="customerPhone" required placeholder="09xx xxx xxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50 text-sm">
                             </div>
                         </div>
-                        <div>
+                        <div class="text-left">
                             <label class="block text-sm font-semibold text-slate-700 mb-2">Mô tả sự cố / Yêu cầu</label>
                             <div class="relative">
-                                <textarea rows="4" id="bookingNote" placeholder="Ví dụ: Máy kêu to, rỏ nước..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50"></textarea>
-
-                            </div>
-                            <div id="aiResultBox" class="hidden mt-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm">
-                                <p class="mb-1"><strong>Dự đoán:</strong> <span id="aiCause"></span></p>
-                                <p class="mb-1"><strong>Lời khuyên:</strong> <span id="aiAdvice"></span></p>
-                                <p><strong>Gợi ý:</strong> <span id="aiService" class="font-bold text-blue-600"></span></p>
+                                <textarea rows="4" id="bookingNote" placeholder="Ví dụ: Máy kêu to, rỏ nước..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50 text-sm"></textarea>
                             </div>
                         </div>
                         <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition shadow-lg flex items-center justify-center gap-2 text-lg">
@@ -381,23 +352,17 @@
     </footer>
 
     <!-- Floating Buttons Container -->
-    <!-- NEW: Phone Floating Button -->
     <a href="tel:0924101087" class="phone-float bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" title="Gọi ngay cho chúng tôi">
         <i data-lucide="phone" class="w-8 h-8 fill-current"></i>
     </a>
-
-    <!-- Zalo Floating Button -->
-    <a href="https://zalo.me/0924101087" target="_blank" class="zalo-float bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" title="Chat qua Zalo">
+    <a href="https://zalo.me/0924104087" target="_blank" class="zalo-float bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" title="Chat qua Zalo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-10 h-10">
     </a>
 
-    <!-- Toast Notification -->
+    <!-- Toast -->
     <div id="toast-notification" class="fixed bottom-8 right-8 bg-white border shadow-2xl rounded-2xl p-5 flex items-start gap-4 transform translate-y-32 opacity-0 transition-all duration-300 z-[100] max-w-sm">
         <div id="toast-icon"></div>
-        <div>
-            <h4 id="toast-title" class="font-bold text-slate-800"></h4>
-            <p id="toast-message" class="text-slate-600 text-sm"></p>
-        </div>
+        <div><h4 id="toast-title" class="font-bold text-slate-800"></h4><p id="toast-message" class="text-slate-600 text-sm"></p></div>
     </div>
 
     <!-- Scripts -->
@@ -422,94 +387,56 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
         const appId = "dienlanhpro";
-        const apiKey = ""; // Environment Key
-
+        
         let currentUser = null;
-
         onAuthStateChanged(auth, (user) => { currentUser = user; });
         signInAnonymously(auth).catch(err => console.error("Firebase Auth Error"));
 
-        // Reveal animation on scroll
         function reveal() {
             var reveals = document.querySelectorAll(".reveal");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 150;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
+                if (elementTop < windowHeight - 150) { reveals[i].classList.add("active"); }
             }
         }
         window.addEventListener("scroll", reveal);
         window.onload = reveal;
 
-        // AI DIAGNOSIS
-        async function analyzeWithAI(text) {
-            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
-            const payload = {
-                contents: [{ parts: [{ text: `Phân tích sự cố điều hòa sau: "${text}"` }] }],
-                systemInstruction: { parts: [{ text: "Đóng vai thợ điện lạnh chuyên nghiệp. Trả lời JSON gồm: nguyenNhan, loiKhuyen, dichVuGoiY." }] },
-                generationConfig: { responseMimeType: "application/json" }
-            };
-
-            const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
-            const result = await response.json();
-            return JSON.parse(result.candidates[0].content.parts[0].text);
-        }
-
-        document.getElementById('aiDiagnoseBtn').addEventListener('click', async (e) => {
-            const note = document.getElementById('bookingNote').value;
-            if (!note) return;
-            e.target.disabled = true;
-            try {
-                const data = await analyzeWithAI(note);
-                document.getElementById('aiCause').textContent = data.nguyenNhan;
-                document.getElementById('aiAdvice').textContent = data.loiKhuyen;
-                document.getElementById('aiService').textContent = data.dichVuGoiY;
-                document.getElementById('aiResultBox').classList.remove('hidden');
-                showToast('AI Bắt Bệnh', 'Đã phân tích xong sự cố của bạn!');
-            } catch (err) { console.error(err); } finally { e.target.disabled = false; }
-        });
-
-        // FORM SUBMISSION
         document.getElementById('booking-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (!currentUser) return;
+            if (!currentUser) return showToast('Lỗi', 'Chưa kết nối được máy chủ', 'error');
             const submitBtn = document.getElementById('submitBtn');
             submitBtn.disabled = true;
             try {
-                const bookingsRef = collection(db, 'artifacts', appId, 'public', 'data', 'bookings');
-                await addDoc(bookingsRef, {
+                await addDoc(collection(db, 'artifacts', appId, 'public', 'data', 'bookings'), {
                     customerName: document.getElementById('customerName').value,
                     customerPhone: document.getElementById('customerPhone').value,
                     bookingNote: document.getElementById('bookingNote').value,
                     createdAt: serverTimestamp(),
                     status: 'new'
                 });
-                showToast('Gửi thành công!', 'Điện Lạnh Pro sẽ gọi lại ngay.');
+                showToast('Thành công', 'Chúng tôi sẽ gọi lại ngay!');
                 e.target.reset();
-                document.getElementById('aiResultBox').classList.add('hidden');
             } catch (err) { console.error(err); } finally { submitBtn.disabled = false; }
         });
 
-        function showToast(title, message) {
+        function showToast(title, message, type = 'success') {
             const toast = document.getElementById('toast-notification');
             document.getElementById('toast-title').textContent = title;
             document.getElementById('toast-message').textContent = message;
             const icon = document.getElementById('toast-icon');
-            icon.innerHTML = '<i data-lucide="check-circle" class="text-green-500 w-6"></i>';
+            icon.innerHTML = type === 'success' ? '<i data-lucide="check-circle" class="text-green-500 w-6"></i>' : '<i data-lucide="alert-circle" class="text-red-500 w-6"></i>';
             lucide.createIcons();
             toast.classList.remove('translate-y-32', 'opacity-0');
             setTimeout(() => toast.classList.add('translate-y-32', 'opacity-0'), 4000);
         }
 
-        // Mobile menu toggle
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        }
         document.querySelectorAll('.mobile-link').forEach(link => {
             link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
         });
