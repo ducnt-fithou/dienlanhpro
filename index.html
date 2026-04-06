@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dịch vụ sửa chữa, bảo trì và lắp đặt điều hòa chuyên nghiệp tại Việt Nam. Uy tín, báo giá minh bạch, hỗ trợ 24/7.">
+    <meta name="keywords" content="sửa điều hòa, lắp đặt điều hòa, bảo trì máy lạnh, điện lạnh pro, vệ sinh điều hòa">
+    <title>Điện Lạnh Pro - Dịch Vụ Điều Hòa Tận Tâm & Chuyên Nghiệp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
+        }
+        .service-card:hover, .stat-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .service-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #2563eb;
+            color: white;
+        }
+        html { scroll-behavior: smooth; }
+
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background-color: #f8fafc; color: #475569; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; padding: 0.75rem 1rem; border-bottom: 2px solid #e2e8f0; }
+        td { padding: 1rem; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; }
+        .price-tag { font-weight: 700; color: #2563eb; white-space: nowrap; }
+
+        /* Zalo Floating Button */
+        .zalo-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 99;
+            animation: pulse-blue 2s infinite;
+        }
+        @keyframes pulse-blue {
+            0% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 104, 255, 0); }
+        }
+
+        /* Phone Floating Button (NEW) */
+        .phone-float {
+            position: fixed;
+            bottom: 96px; /* Nằm trên nút Zalo (24 + 56 + 16px gap) */
+            right: 24px;
+            z-index: 99;
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Reveal on Scroll Animation */
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="snowflake" class="text-blue-600 w-8 h-8"></i>
+                <span class="text-2xl font-bold text-blue-900 tracking-tight">ĐIỆN LẠNH<span class="text-blue-500">PRO</span></span>
+            </div>
+            
+            <div class="hidden md:flex gap-8 font-medium">
+                <a href="#home" class="hover:text-blue-600 transition">Trang Chủ</a>
+                <a href="#services-list" class="hover:text-blue-600 transition">Dịch Vụ</a>
+                <a href="#pricing" class="hover:text-blue-600 transition">Bảng Giá</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Liên Hệ</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:0924101087" class="hidden sm:flex items-center gap-2 bg-blue-600 text-white px-5 py-2 rounded-full font-semibold hover:bg-blue-700 transition shadow-md">
+                    <i data-lucide="phone-call" class="w-4 h-4"></i>
+                    0924 101 087
+                </a>
+                <button class="md:hidden text-slate-600 p-2" id="mobile-menu-btn">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 p-4 shadow-lg absolute w-full z-40">
+        <div class="flex flex-col gap-4 text-lg font-medium">
+            <a href="#home" class="mobile-link">Trang Chủ</a>
+            <a href="#services-list" class="mobile-link">Dịch Vụ</a>
+            <a href="#pricing" class="mobile-link">Bảng Giá</a>
+            <a href="#contact" class="mobile-link">Liên Hệ</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20 lg:py-28 overflow-hidden">
+        <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-12">
+            <div class="lg:w-1/2 space-y-6">
+                <h1 class="text-4xl lg:text-6xl font-extrabold leading-tight">
+                    Giải Pháp Làm Mát <br> Tận Tâm & Chuyên Nghiệp
+                </h1>
+                <p class="text-xl text-blue-100 max-w-lg">
+                    Chuyên lắp đặt, sửa chữa và bảo trì điều hòa tại nhà. Phục vụ nhanh chóng, báo giá minh bạch theo tiêu chuẩn hãng.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a href="#pricing" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition shadow-xl flex items-center gap-2">
+                        Xem Bảng Giá <i data-lucide="arrow-down-circle" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition">Đặt Lịch Ngay</a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <div class="bg-blue-400/20 rounded-3xl p-4 backdrop-blur-sm border border-white/20 shadow-2xl relative overflow-hidden min-h-[400px] flex items-center justify-center">
+                    <!-- Ảnh tĩnh chất lượng cao (Static Image) -->
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800" 
+                         alt="Kỹ thuật viên Điện Lạnh Pro chuyên nghiệp đang sửa điều hòa" 
+                         class="rounded-2xl w-full object-cover h-[400px] shadow-2xl transition-opacity duration-700">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                    <div class="text-4xl font-extrabold text-blue-600 mb-2">5,000+</div>
+                    <div class="text-slate-600 font-medium text-sm">Khách Hàng Hài Lòng</div>
+                </div>
+                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                    <div class="text-4xl font-extrabold text-blue-600 mb-2">10+</div>
+                    <div class="text-slate-600 font-medium text-sm">Năm Kinh Nghiệm</div>
+                </div>
+                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                    <div class="text-4xl font-extrabold text-blue-600 mb-2">20+</div>
+                    <div class="text-slate-600 font-medium text-sm">Kỹ Thuật Viên Giỏi</div>
+                </div>
+                <div class="text-center stat-card p-6 rounded-2xl bg-blue-50/50">
+                    <div class="text-4xl font-extrabold text-blue-600 mb-2">24/7</div>
+                    <div class="text-slate-600 font-medium text-sm">Hỗ Trợ Tận Nơi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dịch Vụ -->
+    <section id="services-list" class="py-24 bg-white reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4">Dịch Vụ Của Chúng Tôi</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Chúng tôi cung cấp giải pháp toàn diện cho hệ thống làm mát của bạn với chất lượng cao nhất.</p>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300">
+                    <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                        <i data-lucide="droplets" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Vệ Sinh Điều Hòa</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Làm sạch sâu dàn lạnh, dàn nóng. Giúp máy chạy êm, tiết kiệm 30% điện năng và bảo vệ sức khỏe.</p>
+                    <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Đặt lịch ngay <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300">
+                    <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                        <i data-lucide="wrench" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Sửa Chữa Chuyên Sâu</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Xử lý triệt để lỗi mất lạnh, rò rỉ nước, hỏng bo mạch, thay máy nén (Block) chính hãng.</p>
+                    <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Báo giá sửa <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                </div>
+
+                <div class="service-card group p-8 rounded-3xl bg-slate-50 border border-slate-100 shadow-sm transition-all duration-300">
+                    <div class="icon-box w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6 transition-all duration-300">
+                        <i data-lucide="layout" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Lắp Đặt & Di Dời</h3>
+                    <p class="text-slate-600 leading-relaxed mb-4">Tư vấn vị trí lắp đặt tối ưu, tháo lắp điều hòa treo tường, âm trần, nối ống gió chuẩn kỹ thuật.</p>
+                    <a href="#contact" class="text-blue-600 font-bold flex items-center gap-2 group-hover:gap-3 transition-all">Tư vấn lắp <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hãng Điều Hòa Đối Tác (10 hãng) -->
+    <section class="py-20 bg-slate-50 border-y border-slate-100 overflow-hidden reveal">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <p class="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-2">Đối tác tin cậy & Ủy quyền sửa chữa</p>
+                <div class="w-12 h-0.5 bg-blue-600 mx-auto rounded-full"></div>
+            </div>
+            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-14 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
+                <span class="text-xl md:text-2xl font-black text-slate-700 tracking-tighter">DAIKIN</span>
+                <span class="text-xl md:text-2xl font-bold text-slate-700">Panasonic</span>
+                <span class="text-xl md:text-2xl font-bold text-slate-700 italic">MITSUBISHI</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">SAMSUNG</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">LG</span>
+                <span class="text-xl md:text-2xl font-bold text-slate-700 tracking-widest">TOSHIBA</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">SHARP</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">CASPER</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700 tracking-tighter italic">NAGAKAWA</span>
+                <span class="text-xl md:text-2xl font-black text-slate-700">GREE</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-white relative reveal">
+        <div class="container mx-auto px-4 text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Bảng Giá Dịch Vụ 2026</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto italic">Cam kết linh kiện chính hãng, báo giá trước khi thi công.</p>
+            <div class="w-24 h-1 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        <div class="container mx-auto px-4 grid lg:grid-cols-2 gap-8">
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="p-6 bg-blue-50 border-b border-slate-200 flex items-center gap-3">
+                    <i data-lucide="shield-check" class="text-blue-600 w-6 h-6"></i>
+                    <h3 class="text-xl font-bold text-slate-900">1. Bảo Dưỡng & Vệ Sinh</h3>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th class="text-left">Hạng mục</th><th class="text-center">ĐVT</th><th class="text-right">Đơn giá</th></tr></thead>
+                        <tbody>
+                            <tr><td>Vệ sinh máy treo tường</td><td class="text-center">Bộ</td><td class="text-right price-tag">150.000</td></tr>
+                            <tr><td>Vệ sinh máy âm trần</td><td class="text-center">Bộ</td><td class="text-right price-tag">220.000</td></tr>
+                            <tr><td>Nạp gas R22</td><td class="text-center">PSI</td><td class="text-right price-tag">7.000</td></tr>
+                            <tr><td>Gói VRV: Vệ sinh dàn nóng</td><td class="text-center">Cái</td><td class="text-right price-tag">250.000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-slate-200 overflow-hidden text-left">
+                <div class="p-6 bg-blue-50 border-b border-slate-200 flex items-center gap-3">
+                    <i data-lucide="wrench" class="text-blue-600 w-6 h-6"></i>
+                    <h3 class="text-xl font-bold text-slate-900">2. Lắp Đặt & Ống Đồng</h3>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th class="text-left">Hạng mục</th><th class="text-center">ĐVT</th><th class="text-right">Đơn giá</th></tr></thead>
+                        <tbody>
+                            <tr><td>Lắp máy 9.000 - 12.000BTU</td><td class="text-center">Bộ</td><td class="text-right price-tag">250.000</td></tr>
+                            <tr><td>Lắp máy 18.000BTU</td><td class="text-center">Bộ</td><td class="text-right price-tag">300.000</td></tr>
+                            <tr><td>Ống đồng Ruby (9.000BTU)</td><td class="text-center">Mét</td><td class="text-right price-tag">200.000</td></tr>
+                            <tr><td>Tháo máy cũ</td><td class="text-center">Bộ</td><td class="text-right price-tag">150.000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-4 text-center mt-12">
+            <a href="https://docs.google.com/presentation/d/1bMNV1lssyQHd0RtJeU07SA_Y8K1UbN-fzyyiIFb8UeM/edit?usp=sharing" target="_blank" class="inline-flex items-center gap-2 bg-blue-600 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-xl hover:shadow-blue-200">
+                <i data-lucide="file-text" class="w-5 h-5"></i>
+                Báo Giá Chi Tiết
+            </a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-slate-900 text-white reveal">
+        <div class="container mx-auto px-4 text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-extrabold mb-4 tracking-tight">Khách Hàng Tin Tưởng</h2>
+        </div>
+        <div class="container mx-auto px-4 grid md:grid-cols-3 gap-8">
+            <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                <div class="flex gap-1 text-yellow-400 mb-4">
+                    <i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i>
+                </div>
+                <p class="text-slate-300 italic mb-6">"Dịch vụ rất nhanh chóng, tôi gọi sau 30 phút là thợ đã có mặt. Anh kỹ thuật viên nhiệt tình."</p>
+                <p class="font-bold">Anh Nguyễn Hoàng Anh</p>
+                <p class="text-xs text-slate-400">Quận Đống Đa, Hà Nội</p>
+            </div>
+            <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                <div class="flex gap-1 text-yellow-400 mb-4">
+                    <i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i>
+                </div>
+                <p class="text-slate-300 italic mb-6">"Bảng giá minh bạch, thợ đến lắp máy rất thẩm mỹ và sạch sẽ. Sẽ tiếp tục ủng hộ."</p>
+                <p class="font-bold">Chị Lê Minh Lan</p>
+                <p class="text-xs text-slate-400">Hà Nội</p>
+            </div>
+            <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700">
+                <div class="flex gap-1 text-yellow-400 mb-4">
+                    <i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i>
+                </div>
+                <p class="text-slate-300 italic mb-6">"Trợ lý AI bắt bệnh rất hay, thợ đến đúng như AI tư vấn. Chuyên nghiệp!"</p>
+                <p class="font-bold">Anh Trần Việt Hùng</p>
+                <p class="text-xs text-slate-400">Đà Nẵng</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-slate-50 reveal">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-slate-100">
+                <div class="lg:w-1/3 bg-blue-600 text-white p-10 lg:p-16 relative">
+                    <h3 class="text-3xl font-bold mb-8">Liên Hệ Ngay</h3>
+                    <div class="space-y-6 text-blue-50">
+                        <a href="tel:0924101087" class="flex gap-4 items-center hover:text-blue-200 transition-colors group">
+                            <i data-lucide="phone" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                            <p class="font-semibold text-lg text-white">0924 101 087</p>
+                        </a>
+                        <div class="flex gap-4 items-start group">
+                            <i data-lucide="map-pin" class="w-5 h-5 mt-1 shrink-0"></i>
+                            <p class="text-blue-50 leading-relaxed">Vĩnh Hưng, Hoàng Mai, Hà Nội</p>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                            <p>hotro@dienlanhpro.vn</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:w-2/3 p-10 lg:p-16">
+                    <h4 class="text-2xl font-bold mb-6 text-slate-800 tracking-tight">Đặt Lịch & Nhận Tư Vấn Miễn Phí</h4>
+                    <form class="space-y-6" id="booking-form">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Họ tên của bạn</label>
+                                <input type="text" id="customerName" required placeholder="Nguyễn Văn A" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-700 mb-2">Số điện thoại</label>
+                                <input type="tel" id="customerPhone" required placeholder="09xx xxx xxx" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-slate-700 mb-2">Mô tả sự cố / Yêu cầu</label>
+                            <div class="relative">
+                                <textarea rows="4" id="bookingNote" placeholder="Ví dụ: Máy kêu to, rỏ nước..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition bg-slate-50"></textarea>
+                                <button type="button" id="aiDiagnoseBtn" class="absolute bottom-4 right-4 bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 hover:bg-blue-200 transition border border-blue-200">
+                                    ✨ AI Tư vấn
+                                </button>
+                            </div>
+                            <div id="aiResultBox" class="hidden mt-4 p-4 bg-blue-50 border border-blue-200 rounded-xl text-sm">
+                                <p class="mb-1"><strong>Dự đoán:</strong> <span id="aiCause"></span></p>
+                                <p class="mb-1"><strong>Lời khuyên:</strong> <span id="aiAdvice"></span></p>
+                                <p><strong>Gợi ý:</strong> <span id="aiService" class="font-bold text-blue-600"></span></p>
+                            </div>
+                        </div>
+                        <button type="submit" id="submitBtn" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition shadow-lg flex items-center justify-center gap-2 text-lg">
+                            Gửi Yêu Cầu <i data-lucide="send" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 text-center border-t border-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <i data-lucide="snowflake" class="text-blue-500 w-6 h-6"></i>
+                <span class="text-xl font-bold text-white tracking-tight">ĐIỆN LẠNH<span class="text-blue-500">PRO</span></span>
+            </div>
+            <p class="text-sm mb-4">Vĩnh Hưng, Hoàng Mai, Hà Nội</p>
+            <p class="text-xs">&copy; 2026 Điện Lạnh Pro. Chuyên sửa chữa & lắp đặt điều hòa toàn quốc.</p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons Container -->
+    <!-- NEW: Phone Floating Button -->
+    <a href="tel:0924101087" class="phone-float bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" title="Gọi ngay cho chúng tôi">
+        <i data-lucide="phone" class="w-8 h-8 fill-current"></i>
+    </a>
+
+    <!-- Zalo Floating Button -->
+    <a href="https://zalo.me/0924101087" target="_blank" class="zalo-float bg-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300" title="Chat qua Zalo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" class="w-10 h-10">
+    </a>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="fixed bottom-8 right-8 bg-white border shadow-2xl rounded-2xl p-5 flex items-start gap-4 transform translate-y-32 opacity-0 transition-all duration-300 z-[100] max-w-sm">
+        <div id="toast-icon"></div>
+        <div>
+            <h4 id="toast-title" class="font-bold text-slate-800"></h4>
+            <p id="toast-message" class="text-slate-600 text-sm"></p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        lucide.createIcons();
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBf4l839IZ4DDO-Ed7sNlGX2C8aK-tUBZY",
+            authDomain: "dienlanhpro.firebaseapp.com",
+            projectId: "dienlanhpro",
+            storageBucket: "dienlanhpro.firebasestorage.app",
+            messagingSenderId: "28671995413",
+            appId: "1:28671995413:web:03b22042d90b4a5491281c",
+            measurementId: "G-6KHCC01MG2"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = "dienlanhpro";
+        const apiKey = ""; // Environment Key
+
+        let currentUser = null;
+
+        onAuthStateChanged(auth, (user) => { currentUser = user; });
+        signInAnonymously(auth).catch(err => console.error("Firebase Auth Error"));
+
+        // Reveal animation on scroll
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        window.onload = reveal;
+
+        // AI DIAGNOSIS
+        async function analyzeWithAI(text) {
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            const payload = {
+                contents: [{ parts: [{ text: `Phân tích sự cố điều hòa sau: "${text}"` }] }],
+                systemInstruction: { parts: [{ text: "Đóng vai thợ điện lạnh chuyên nghiệp. Trả lời JSON gồm: nguyenNhan, loiKhuyen, dichVuGoiY." }] },
+                generationConfig: { responseMimeType: "application/json" }
+            };
+
+            const response = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+            const result = await response.json();
+            return JSON.parse(result.candidates[0].content.parts[0].text);
+        }
+
+        document.getElementById('aiDiagnoseBtn').addEventListener('click', async (e) => {
+            const note = document.getElementById('bookingNote').value;
+            if (!note) return;
+            e.target.disabled = true;
+            try {
+                const data = await analyzeWithAI(note);
+                document.getElementById('aiCause').textContent = data.nguyenNhan;
+                document.getElementById('aiAdvice').textContent = data.loiKhuyen;
+                document.getElementById('aiService').textContent = data.dichVuGoiY;
+                document.getElementById('aiResultBox').classList.remove('hidden');
+                showToast('AI Bắt Bệnh', 'Đã phân tích xong sự cố của bạn!');
+            } catch (err) { console.error(err); } finally { e.target.disabled = false; }
+        });
+
+        // FORM SUBMISSION
+        document.getElementById('booking-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            if (!currentUser) return;
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+            try {
+                const bookingsRef = collection(db, 'artifacts', appId, 'public', 'data', 'bookings');
+                await addDoc(bookingsRef, {
+                    customerName: document.getElementById('customerName').value,
+                    customerPhone: document.getElementById('customerPhone').value,
+                    bookingNote: document.getElementById('bookingNote').value,
+                    createdAt: serverTimestamp(),
+                    status: 'new'
+                });
+                showToast('Gửi thành công!', 'Điện Lạnh Pro sẽ gọi lại ngay.');
+                e.target.reset();
+                document.getElementById('aiResultBox').classList.add('hidden');
+            } catch (err) { console.error(err); } finally { submitBtn.disabled = false; }
+        });
+
+        function showToast(title, message) {
+            const toast = document.getElementById('toast-notification');
+            document.getElementById('toast-title').textContent = title;
+            document.getElementById('toast-message').textContent = message;
+            const icon = document.getElementById('toast-icon');
+            icon.innerHTML = '<i data-lucide="check-circle" class="text-green-500 w-6"></i>';
+            lucide.createIcons();
+            toast.classList.remove('translate-y-32', 'opacity-0');
+            setTimeout(() => toast.classList.add('translate-y-32', 'opacity-0'), 4000);
+        }
+
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+    </script>
+</body>
+</html>
